@@ -151,3 +151,24 @@ body {
         float: none;
     }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content-block {
+        width: 48%;
+        margin-bottom: 15px;
+    }
+
+    .section:last-of-type .content-block {
+        margin-bottom: 0;
+    }
+
+    .text-block {
+        padding: 15px;
+        font-size: 1.3rem;
+    }
+
+    .text-block h2 {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+}
