@@ -73,11 +73,11 @@ body {
 
 .content-block {
     width: 48%;
-    min-height: 300px;
     border-radius: 8px;
     box-sizing: border-box;
     margin-bottom: 0;
     margin-top: 20px;
+    min-height: auto;
 }
 
 .text-block {
@@ -114,6 +114,85 @@ body {
     float: left;
 }
 
+.button-eroi {
+    display: inline-block;
+    background-color: #ADD8E6;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.button-eroi:hover {
+    background-color: #0056b3;
+}
+
+.button-eroi i {
+    margin-left: 10px;
+}
+
+footer.contact-section {
+    background-color: #ADD8E6;
+    padding: 20px;
+}
+
+footer.contact-section .content-block {
+    width: 48%;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    margin-top: 10px;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 15px;
+}
+
+footer.contact-section .image-block {
+    float: left;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+footer.contact-section .image-block img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+footer.contact-section .text-block {
+    float: right;
+    text-align: left;
+    font-size: 1.6rem;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer.contact-section h2 {
+    font-size: 2rem;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+footer.contact-section ul {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+footer.contact-section li {
+    margin-top: 5px;
+}
+
+footer.contact-section li a {
+    font-size: 1.6rem;
+}
+
 @media (max-width: 768px) {
     .welcome-banner {
         margin-bottom: 10px;
@@ -141,7 +220,17 @@ body {
         width: 100%;
         float: none;
         margin-bottom: 0px;
-        margin-top: 15px; /* Aggiunto margin-top anche per la visualizzazione mobile */
+        margin-top: 15px;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer.contact-section .text-block {
+        text-align: center;
+        font-size: 1.4rem;
     }
 
     .section .content-block:last-of-type {
@@ -152,13 +241,59 @@ body {
     .section-reverse .image-block {
         float: none;
     }
+
+    .button-eroi {
+        padding: 8px 15px;
+        font-size: 1.2rem;
+        margin-top: 10px;
+    }
+
+    footer.contact-section {
+        padding: 15px;
+    }
+
+    footer.contact-section .content-block {
+        padding: 10px;
+        margin-top: 10px;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer.contact-section .image-block img {
+        width: 60%;
+        max-width: 200px;
+        height: auto;
+        display: block;
+        margin: 10px auto;
+        border-radius: 8px;
+    }
+
+    footer.contact-section h2 {
+        font-size: 1.8rem;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    footer.contact-section ul {
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+
+    footer.contact-section li {
+        margin-top: 3px;
+    }
+
+    footer.contact-section li a {
+        font-size: 1.4rem;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .content-block {
         width: 48%;
         margin-bottom: 15px;
-        margin-top: 15px; /* Aggiunto margin-top anche per la visualizzazione tablet */
+        margin-top: 15px;
+        min-height: auto;
     }
 
     .section:last-of-type .content-block {
@@ -173,5 +308,53 @@ body {
     .text-block h2 {
         font-size: 1.8rem;
         margin-bottom: 8px;
+    }
+
+    footer.contact-section .text-block {
+        text-align: left;
+        font-size: 1.5rem;
+    }
+
+    .button-eroi {
+        padding: 10px 18px;
+        font-size: 1.4rem;
+        margin-top: 12px;
+    }
+
+    footer.contact-section {
+        padding: 20px;
+    }
+
+    footer.contact-section .content-block {
+        padding: 15px;
+        margin-top: 10px;
+    }
+
+    footer.contact-section .image-block img {
+        width: 70%;
+        max-width: 250px;
+        height: auto;
+        display: block;
+        margin: 10px auto;
+        border-radius: 8px;
+    }
+
+    footer.contact-section h2 {
+        font-size: 1.9rem;
+        margin-top: 5px;
+        margin-bottom: 8px;
+    }
+
+    footer.contact-section ul {
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+
+    footer.contact-section li {
+        margin-top: 4px;
+    }
+
+    footer.contact-section li a {
+        font-size: 1.5rem;
     }
 }
