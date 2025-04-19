@@ -1,3 +1,203 @@
-.navbar{
-    background-color: lightblue;
+/* Stili generali della pagina */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ADD8E6;
+    border: 12px solid #ADD8E6;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: #ADD8E6; /* Sfondo della navbar uguale allo sfondo della pagina */
+    margin-top: 0;
+}
+
+/* Stili per il marchio (logo e testo) della navbar */
+.navbar-brand {
+    display: flex; /* Utilizzo di Flexbox per allineare logo e testo */
+    align-items: center; /* Allineamento verticale degli elementi al centro */
+}
+
+.navbar-brand a {
+    font-size: 1.5rem;
+    color: #000000; /* Colore del testo del marchio */
+    text-decoration: none; /* Rimozione della sottolineatura dai link */
+}
+
+.navbar-brand img {
+    margin-right: 10px; /* Spazio a destra dell'immagine del logo */
+}
+
+/* Stili per il marchio e i link di navigazione */
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #000000; /* Colore del testo dei link della navbar */
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #333333; /* Colore del testo dei link al passaggio del mouse */
+}
+
+/* Stili per il contenuto principale */
+.hero-main {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    width: 100%; /* Ricordato! */
+}
+
+.hero-title {
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Stili per la griglia dei cani */
+.dog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Griglia a più colonne responsiva */
+    gap: 20px; /* Spazio tra le card */
+}
+
+/* Stili per la singola scheda del cane */
+.dog-card {
+    background-color: #ADD8E6;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+/* Stili per il contenitore dell'immagine */
+.dog-image-container {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    background-color: #FF69B4; /* Sfondo rosa temporaneo */
+}
+
+/* Stili per l'immagine del cane */
+.dog-image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Stili per le informazioni del cane (con scrollbar) */
+.dog-info {
+    padding: 10px;
+    text-align: center;
+    min-height: 250px; /* Aumentato lo spazio per la storia */
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+/* Stili per il nome del cane (titolo) */
+.dog-name {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #212529;
+}
+
+/* Stili per il tipo di assistenza (sottotitolo) */
+.dog-assistance {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 10px;
+}
+
+/* Stili per la breve storia */
+.dog-story {
+    font-size: 1rem;
+    color: #495057;
+}
+
+/* Media query per schermi più piccoli (mobile) */
+@media (max-width: 768px) {
+    body {
+        border: 6px solid #ADD8E6;
+    }
+
+    .navbar-expand-lg .navbar-collapse {
+        display: none !important;
+        width: 100%;
+    }
+
+    .navbar-toggler {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    .navbar-toggler-icon {
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+
+    .navbar-expand-lg .show {
+        display: block !important;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+        background-color: #ADD8E6;
+        margin-top: 10px;
+    }
+
+    .nav-item {
+        margin-left: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .nav-link {
+        padding: 10px 15px !important;
+        text-align: left;
+    }
+
+    .dog-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mantiene il layout responsivo */
+    }
+
+    /* Forza la griglia a due colonne su schermi con larghezza massima di 768px */
+    @media (max-width: 768px) {
+        .dog-grid {
+            grid-template-columns: repeat(2, 1fr); /* Imposta esplicitamente 2 colonne */
+        }
+    }
+
+    .dog-image-container {
+        height: 150px; /* Altezza ridotta su mobile */
+        background-color: #FF69B4; /* Sfondo rosa temporaneo su mobile */
+    }
+
+    .dog-info {
+        padding: 8px;
+        max-height: 120px;
+        overflow-y: auto;
+    }
 }
