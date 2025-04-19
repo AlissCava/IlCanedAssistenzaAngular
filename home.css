@@ -139,7 +139,7 @@ body {
     .content-block {
         width: 100%;
         float: none;
-        margin-bottom: 15px;
+        margin-bottom: 0px;
     }
 
     .section .content-block:last-of-type {
