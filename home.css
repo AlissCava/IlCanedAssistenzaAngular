@@ -1,3 +1,154 @@
-.navbar{
-    background-color: lightblue;
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ADD8E6;
+    border: 12px solid #ADD8E6;
+    box-sizing: border-box;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    background-color: #ADD8E6;
+    margin-top: 0;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand a {
+    font-size: 2rem;
+    color: #000000;
+    text-decoration: none;
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #000000;
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #333333;
+}
+
+.welcome-banner {
+    background-color: #ADD8E6;
+    color: #000000;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+
+.welcome-banner h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.welcome-banner p {
+    color: #333333;
+    font-size: 1.9rem;
+}
+
+.section {
+    margin-bottom: 20px;
+    overflow: hidden;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.section:last-of-type {
+    margin-bottom: 20px;
+}
+
+.content-block {
+    width: 48%;
+    min-height: 300px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-bottom: 0;
+}
+
+.text-block {
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.text-block h2 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.text-block p {
+    text-align: center;
+}
+
+.image-block {
+    background-color: lightpink;
+    float: right;
+}
+
+.section-reverse .text-block {
+    float: right;
+}
+
+.section-reverse .image-block {
+    float: left;
+}
+
+@media (max-width: 768px) {
+    .welcome-banner {
+        margin-bottom: 10px;
+        font-size: 1.3rem;
+    }
+
+    .welcome-banner h1 {
+        font-size: 2rem;
+    }
+
+    .welcome-banner p {
+        font-size: 1.5rem;
+    }
+
+    .section {
+        margin-bottom: 10px;
+        padding: 10px;
+    }
+
+    .section:last-of-type {
+        margin-bottom: 10px;
+    }
+
+    .content-block {
+        width: 100%;
+        float: none;
+        margin-bottom: 15px;
+    }
+
+    .section .content-block:last-of-type {
+       margin-bottom: 0;
+    }
+
+    .section-reverse .text-block,
+    .section-reverse .image-block {
+        float: none;
+    }
 }
