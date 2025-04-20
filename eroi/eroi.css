@@ -189,7 +189,7 @@ body {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mantiene il layout responsivo */
     }
 
-    /* Forza la griglia a due colonne su schermi con larghezza massima di 768px */
+    /* Forza la griglia a una colonna su schermi con larghezza massima di 768px */
     @media (max-width: 768px) {
         .dog-grid {
             grid-template-columns: repeat(1, 1fr); /* Imposta esplicitamente 2 colonne */
