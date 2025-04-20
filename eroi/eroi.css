@@ -132,7 +132,7 @@ body {
 }
 
 /* Media query per schermi più piccoli (mobile) */
-@media (max-width: 768px) {
+@media (max-width: 980px) {
     body {
         border: 6px solid #ADD8E6;
     }
