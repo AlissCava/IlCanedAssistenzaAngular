@@ -63,7 +63,7 @@ body {
 /* Stili per la griglia dei cani */
 .dog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Griglia a più colonne responsiva */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Griglia a più colonne responsiva (default) */
     gap: 20px; /* Spazio tra le card */
 }
 
@@ -186,14 +186,7 @@ body {
     }
 
     .dog-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Mantiene il layout responsivo */
-    }
-
-    /* Forza la griglia a una colonna su schermi con larghezza massima di 768px */
-    @media (max-width: 768px) {
-        .dog-grid {
-            grid-template-columns: repeat(1, 1fr); /* Imposta esplicitamente 2 colonne */
-        }
+        grid-template-columns: repeat(1, 1fr); /* Imposta la griglia a una sola colonna su mobile */
     }
 
     .dog-image-container {
@@ -202,7 +195,6 @@ body {
 
     .dog-info {
         padding: 8px;
-        /* Rimossa max-height e overflow-y qui */
     }
 
     .dog-story-container {
