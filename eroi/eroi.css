@@ -94,13 +94,19 @@ body {
     object-fit: contain;
 }
 
-/* Stili per le informazioni del cane (con scrollbar) */
+/* Stili per le informazioni del cane */
 .dog-info {
     padding: 10px;
     text-align: center;
-    min-height: 250px; /* Aumentato lo spazio per la storia */
-    max-height: 250px;
-    overflow-y: auto;
+    /* Rimossa l'altezza massima e l'overflow per permettere agli altri elementi di fluire */
+}
+
+/* Stili per il contenitore della storia del cane (scrollbar solo qui) */
+.dog-story-container {
+    max-height: 150px; /* Imposta un'altezza massima per far apparire la scrollbar quando necessario */
+    overflow-y: auto; /* Aggiunge la scrollbar verticale se il contenuto supera l'altezza massima */
+    margin-top: 10px; /* Aggiunge un po' di spazio sopra la storia */
+    text-align: left; /* Riporta il testo della storia ad allineamento a sinistra per la lettura */
 }
 
 /* Stili per il nome del cane (titolo) */
@@ -122,6 +128,7 @@ body {
 .dog-story {
     font-size: 1rem;
     color: #495057;
+    margin-bottom: 0; /* Rimosso il margine inferiore per evitare spazio extra nella scrollbar */
 }
 
 /* Media query per schermi più piccoli (mobile) */
@@ -191,12 +198,17 @@ body {
 
     .dog-image-container {
         height: 150px; /* Altezza ridotta su mobile */
-        background-color: #FF69B4; /* Sfondo rosa temporaneo su mobile */
     }
 
     .dog-info {
         padding: 8px;
-        max-height: 120px;
+        /* Rimossa max-height e overflow-y qui */
+    }
+
+    .dog-story-container {
+        max-height: 120px; /* Altezza ridotta su mobile */
         overflow-y: auto;
+        margin-top: 5px;
+        text-align: left;
     }
 }
