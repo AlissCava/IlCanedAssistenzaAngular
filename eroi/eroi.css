@@ -50,7 +50,6 @@ body {
     max-width: 1200px;
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     width: 100%; /* Ricordato! */
 }
 
@@ -72,7 +71,7 @@ body {
     background-color: #ADD8E6;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    box-shadow: 0 0.5rem 0.25rem rgba(0, 0, 0, 0.09);
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -130,6 +129,66 @@ body {
     color: #495057;
     margin-bottom: 0; /* Rimosso il margine inferiore per evitare spazio extra nella scrollbar */
 }
+
+footer.contact-section {
+    background-color: #ADD8E6; /* Sfondo del footer uguale allo sfondo della pagina */
+    padding: 20px;
+}
+
+.contact-section .content-block {
+    width: 48%;
+    border-radius: 8px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    min-height: auto;
+    display: flex; /* Utilizzo di Flexbox per la disposizione interna */
+    flex-direction: column; /* Disposizione degli elementi in colonna */
+    justify-content: flex-start; /* Allineamento del contenuto all'inizio */
+    padding: 15px;
+}
+
+.contact-section .image-block {
+    float: left; /* Posiziona l'immagine a sinistra */
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.contact-section .image-block img {
+    width: 80%;
+    max-width: 300px;
+    height: auto;
+    display: block; /* Rende l'immagine un elemento di blocco per centrarla con margin auto */
+    margin: 10px auto; /* Centra l'immagine orizzontalmente */
+}
+
+.contact-section .text-block {
+    float: right; /* Posiziona il testo a destra */
+    text-align: left;
+    font-size: 1rem;
+}
+
+.contact-section h2 {
+    font-size: 1rem;
+    margin-top: 5px;
+    margin-bottom: 8px;
+}
+
+.contact-section ul {
+    margin-top: 5px;
+    list-style: none; /* Rimozione dei punti elenco */
+}
+
+.contact-section li {
+    margin-top: 5px;
+}
+
+.contact-section li a {
+    font-size: 1rem;
+    text-decoration: none; /* Rimozione della sottolineatura dai link */
+    color: inherit; /* Eredita il colore del testo dal contenitore */
+    margin-left: 10px; /* Spazio a sinistra del link */
+}
+
 
 /* Media query per schermi più piccoli (mobile) */
 @media (max-width: 980px) {
