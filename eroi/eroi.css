@@ -1,40 +1,57 @@
-/* Stili generali della pagina */
+/* ==========================================================================
+   Stili generali della pagina
+   ========================================================================== */
+
+/* Stili per l'elemento body (sfondo, margini, padding, font, ecc.) */
 body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ADD8E6;
-    border: 12px solid #ADD8E6;
+    background-color: #ADD8E6; /* Azzurro chiaro di sfondo */
+    border: 12px solid #ADD8E6; /* Bordo esterno dello stesso colore dello sfondo */
     box-sizing: border-box;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    min-height: 100vh; /* Assicura che il body occupi almeno l'altezza della viewport */
+    display: flex; /* Utilizzo di Flexbox per la disposizione degli elementi figli */
+    flex-direction: column; /* Disposizione degli elementi figli in colonna */
 }
 
+/* ==========================================================================
+   Stili per la Navbar
+   ========================================================================== */
+
+/* Stili per la barra di navigazione principale */
 .navbar {
     background-color: #ADD8E6; /* Sfondo della navbar uguale allo sfondo della pagina */
     margin-top: 0;
 }
 
+/* Stili per il marchio (logo e testo) della navbar */
 .navbar-brand {
-    display: flex; /* Flex per logo + testo */
-    align-items: center;
-    color: #000;
-    text-decoration: none;
+    display: flex; /* Utilizzo di Flexbox per allineare logo e testo */
+    align-items: center; /* Allineamento verticale degli elementi al centro */
+}
+
+.navbar-brand a {
+    font-size: 1.5rem;
+    color: #000000; /* Colore del testo del marchio */
+    text-decoration: none; /* Rimozione della sottolineatura dai link */
 }
 
 .navbar-brand img {
-    margin-right: 10px;
+    margin-right: 10px; /* Spazio a destra dell'immagine del logo */
 }
 
+/* Stili per il marchio e i link di navigazione */
+.navbar-brand,
 .navbar-nav .nav-link {
-    color: #000;
+    color: #000000; /* Colore del testo dei link della navbar */
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-brand:hover {
-    color: #333;
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+    color: #333333; /* Colore del testo dei link al passaggio del mouse */
 }
+
 
 .hero-main {
     padding: 20px;
@@ -69,16 +86,17 @@ body {
 .dog-card-inner {
     position: relative;
     width: 100%;
-    height: 350px; /* altezza fissa */
+    height: 500px; /* altezza fissa */
     text-align: center;
     transition: transform 0.6s;
     transform-style: preserve-3d;
     cursor: pointer;
 }
 
-.dog-card:hover .dog-card-inner {
+.dog-card-inner.flipped {
     transform: rotateY(180deg);
 }
+
 
 /* Lato front */
 .dog-card-front, .dog-card-back {
@@ -141,9 +159,97 @@ body {
     color: #6c757d;
 }
 
+/* Pulsante Instagram sotto immagine */
+.instagram-button {
+  font-size: 1rem;
+  padding: 8px 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #e1306c;
+  color: white;
+  border: none;
+  border-radius: 999px; /* TONDEGGIANTE */
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.instagram-button i {
+  font-size: 1.2rem;
+}
+
+.instagram-button:hover,
+.instagram-button:focus {
+    background-color: #b02857;
+    text-decoration: none;
+    color: white;
+}
+
+/* Griglia 1 colonna per schermi più piccoli di 990px */
+@media (max-width: 990px) {
+
+  dog-card-inner {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+
+ .dog-card-front {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dog-image-container {
+    flex: 1 1 auto; /* Occupa spazio disponibile */
+    overflow: hidden;
+    width: 80%;         /* lascia 10% di margine a sinistra e 10% a destra */
+    margin: 0 auto;     /* centra il contenitore */
+    height: auto;       /* permette altezza flessibile */
+  }
+
+  .dog-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  /* Imposta altezza maggiore della card */
+ .dog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dog-image-container {
+    width: 80%;         /* lascia 10% di margine a sinistra e 10% a destra */
+    margin: 0 auto;     /* centra il contenitore */
+    height: auto;       /* permette altezza flessibile */
+  }
+
+  .dog-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* Bottone Instagram più piccolo */
+   .instagram-button {
+    font-size: 0.5rem !important;
+    padding: 6px 12px !important;
+    border-radius: 999px !important; /* manteniamo il cerchio */
+    display: flex !important;
+    justify-content: center !important;
+    margin-bottom: 2rem;
+  }
+
+  .instagram-button i {
+    font-size: 0.5rem !important;
+  }
+}
+
 /* Storia retro */
 .dog-story-container {
-    max-height: 320px;
+    max-height: 480px;
     overflow-y: auto;
 }
 
@@ -152,66 +258,61 @@ body {
     margin: 0;
 }
 
-/* Stili per la sezione del footer (contatti) */
-footer.contact-section {
-    background-color: #ADD8E6; /* Sfondo del footer uguale allo sfondo della pagina */
-    padding: 20px;
-    height: 150px;
+/* ==========================================================================
+   Stili per il Footer
+   ========================================================================== */
+.custom-footer {
+  background-color: #224f71; /* azzurro scuro */
+  padding: 20px 10px;
+  text-align: center;
+  color: #fff;
 }
 
-.contact-section .content-block {
-    width: 48%;
-    border-radius: 8px;
-    box-sizing: border-box;
-    margin-top: 10px;
-    min-height: auto;
-    display: flex; /* Utilizzo di Flexbox per la disposizione interna */
-    flex-direction: column; /* Disposizione degli elementi in colonna */
-    justify-content: flex-start; /* Allineamento del contenuto all'inizio */
-    padding: 15px;
+.footer-buttons {
+  margin-bottom: 15px;
 }
 
-.contact-section .image-block {
-    float: left; /* Posiziona l'immagine a sinistra */
-    margin-top: 5px;
-    margin-bottom: 5px;
+.footer-btn {
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 999px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.contact-section .image-block img {
-    width: 80%;
-    max-width: 300px;
-    height: auto;
-    display: block; /* Rende l'immagine un elemento di blocco per centrarla con margin auto */
-    margin: 10px auto; /* Centra l'immagine orizzontalmente */
+.footer-btn.insta {
+  background-color: #e1306c; /* rosa Instagram */
 }
 
-.contact-section .text-block {
-    float: right; /* Posiziona il testo a destra */
-    text-align: left;
-    font-size: 1rem;
+.footer-btn.tiktok {
+  background-color: #444; /* grigio scuro */
 }
 
-.contact-section h2 {
-    font-size: 1rem;
-    margin-top: 5px;
-    margin-bottom: 8px;
+.footer-btn.email {
+  background-color: #3498db; /* azzurro email */
 }
 
-.contact-section ul {
-    margin-top: 5px;
-    list-style: none; /* Rimozione dei punti elenco */
+.footer-btn:hover {
+  opacity: 0.85;
 }
 
-.contact-section li {
-    margin-top: 5px;
+.privacy-text {
+  font-size: 13px;
+  color: #ccc;
+  margin: 10px auto;
+  max-width: 500px;
 }
 
-.contact-section li a {
-    font-size: 1rem;
-    text-decoration: none; /* Rimozione della sottolineatura dai link */
-    color: inherit; /* Eredita il colore del testo dal contenitore */
-    margin-left: 10px; /* Spazio a sinistra del link */
+.copyright {
+  font-size: 12px;
+  color: #bbb;
+  margin-top: 10px;
 }
+
 
 /* Media queries per mobile */
 @media (max-width: 980px) {
