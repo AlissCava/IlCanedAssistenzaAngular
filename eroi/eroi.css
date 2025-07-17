@@ -16,123 +16,147 @@ body {
     margin-top: 0;
 }
 
-/* Stili per il marchio (logo e testo) della navbar */
 .navbar-brand {
-    display: flex; /* Utilizzo di Flexbox per allineare logo e testo */
-    align-items: center; /* Allineamento verticale degli elementi al centro */
-}
-
-.navbar-brand a {
-    font-size: 1.5rem;
-    color: #000000; /* Colore del testo del marchio */
-    text-decoration: none; /* Rimozione della sottolineatura dai link */
+    display: flex; /* Flex per logo + testo */
+    align-items: center;
+    color: #000;
+    text-decoration: none;
 }
 
 .navbar-brand img {
-    margin-right: 10px; /* Spazio a destra dell'immagine del logo */
+    margin-right: 10px;
 }
 
-/* Stili per il marchio e i link di navigazione */
-.navbar-brand,
 .navbar-nav .nav-link {
-    color: #000000; /* Colore del testo dei link della navbar */
+    color: #000;
 }
 
-.navbar-brand:hover,
-.navbar-nav .nav-link:hover {
-    color: #333333; /* Colore del testo dei link al passaggio del mouse */
+.navbar-nav .nav-link:hover,
+.navbar-brand:hover {
+    color: #333;
 }
 
-/* Stili per il contenuto principale */
 .hero-main {
     padding: 20px;
     margin: 20px auto;
-    max-width: 1200px;
-    background-color: #ffffff;
+    max-width: 90%;
+    background-color: #fff;
     border-radius: 8px;
-    width: 100%; /* Ricordato! */
+    width: 100%;
 }
 
 .hero-title {
     color: #333;
     text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
     margin-bottom: 30px;
 }
 
-/* Stili per la griglia dei cani */
+/* Griglia dei cani */
 .dog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Griglia a più colonne responsiva (default) */
-    gap: 20px; /* Spazio tra le card */
+    grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    gap: 20px;
 }
 
-/* Stili per la singola scheda del cane */
+/* CARD con effetto flip */
 .dog-card {
-    background-color: #ADD8E6;
+    perspective: 1000px; /* serve per il 3D flip */
+    margin: 1rem;
+}
+
+.dog-card-inner {
+    position: relative;
+    width: 100%;
+    height: 350px; /* altezza fissa */
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.dog-card:hover .dog-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Lato front */
+.dog-card-front, .dog-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     border-radius: 8px;
-    overflow: hidden;
+    backface-visibility: hidden;
     box-shadow: 0 0.5rem 0.25rem rgba(0, 0, 0, 0.09);
     display: flex;
     flex-direction: column;
-    padding: 5px;
+    background-color: #ADD8E6;
+    overflow: hidden;
 }
 
-/* Stili per il contenitore dell'immagine */
+/* Front */
+.dog-card-front {
+    z-index: 2;
+}
+
+/* Back */
+.dog-card-back {
+    transform: rotateY(180deg);
+    padding: 15px;
+    background-color: #ffffff;
+    color: #495057;
+    overflow-y: auto;
+    text-align: left;
+}
+
+/* Immagine */
 .dog-image-container {
     width: 100%;
-    height: 200px;
+    height: 11000px;
     overflow: hidden;
-    border-radius: 8px 8px 0 0;
 }
 
-/* Stili per l'immagine del cane */
 .dog-image {
+    margin-top: 1rem;
     width: 100%;
     height: 100%;
-    display: block;
     object-fit: contain;
+    display: block;
 }
 
-/* Stili per le informazioni del cane */
+/* Info fronte */
 .dog-info {
     padding: 10px;
-    text-align: center;
-    /* Rimossa l'altezza massima e l'overflow per permettere agli altri elementi di fluire */
-}
-
-/* Stili per il contenitore della storia del cane (scrollbar solo qui) */
-.dog-story-container {
-    max-height: 150px; /* Imposta un'altezza massima per far apparire la scrollbar quando necessario */
-    overflow-y: auto; /* Aggiunge la scrollbar verticale se il contenuto supera l'altezza massima */
-    margin-top: 10px; /* Aggiunge un po' di spazio sopra la storia */
-    text-align: left; /* Riporta il testo della storia ad allineamento a sinistra per la lettura */
-}
-
-/* Stili per il nome del cane (titolo) */
-.dog-name {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
-    font-weight: bold;
     color: #212529;
 }
 
-/* Stili per il tipo di assistenza (sottotitolo) */
+.dog-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
 .dog-assistance {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     color: #6c757d;
-    margin-bottom: 10px;
 }
 
-/* Stili per la breve storia */
+/* Storia retro */
+.dog-story-container {
+    max-height: 320px;
+    overflow-y: auto;
+}
+
 .dog-story {
-    font-size: 1rem;
-    color: #495057;
-    margin-bottom: 0; /* Rimosso il margine inferiore per evitare spazio extra nella scrollbar */
+    font-size: 0.5rem;
+    margin: 0;
 }
 
+/* Stili per la sezione del footer (contatti) */
 footer.contact-section {
     background-color: #ADD8E6; /* Sfondo del footer uguale allo sfondo della pagina */
     padding: 20px;
+    height: 150px;
 }
 
 .contact-section .content-block {
@@ -189,77 +213,30 @@ footer.contact-section {
     margin-left: 10px; /* Spazio a sinistra del link */
 }
 
-
-/* Media query per schermi più piccoli (mobile) */
+/* Media queries per mobile */
 @media (max-width: 980px) {
     body {
         border: 6px solid #ADD8E6;
     }
 
-    .navbar-expand-lg .navbar-collapse {
-        display: none !important;
-        width: 100%;
-    }
-
-    .navbar-toggler {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-
-    .navbar-toggler-icon {
-        width: 1.5em;
-        height: 1.5em;
-        vertical-align: middle;
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 100%;
-    }
-
-    .navbar-expand-lg .show {
-        display: block !important;
-        width: 100%;
-    }
-
-    .navbar-nav {
-        flex-direction: column;
-        width: 100%;
-        background-color: #ADD8E6;
-        margin-top: 10px;
-    }
-
-    .nav-item {
-        margin-left: 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-item:last-child {
-        border-bottom: none;
-    }
-
-    .nav-link {
-        padding: 10px 15px !important;
-        text-align: left;
-    }
-
-    .dog-grid {
-        grid-template-columns: repeat(1, 1fr); /* Imposta la griglia a una sola colonna su mobile */
+    .dog-card-inner {
+        height: 300px;
     }
 
     .dog-image-container {
-        height: 150px; /* Altezza ridotta su mobile */
-    }
-
-    .dog-info {
-        padding: 8px;
+        height: 150px;
     }
 
     .dog-story-container {
-        max-height: 120px; /* Altezza ridotta su mobile */
-        overflow-y: auto;
-        margin-top: 5px;
-        text-align: left;
+        max-height: 250px;
+    }
+
+    footer.contact-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-section .content-block {
+        max-width: 100%;
     }
 }

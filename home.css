@@ -4,6 +4,7 @@
 
 /* Stili per l'elemento body (sfondo, margini, padding, font, ecc.) */
 body {
+    font-size: 1rem;
     font-family: sans-serif;
     margin: 0;
     padding: 0;
@@ -135,6 +136,7 @@ body {
 
 .section .text-block p {
     text-align: left;
+    font-size: 1rem;
 }
 
 /* Stili specifici per il blocco immagine */
